@@ -1,4 +1,4 @@
-package calculator;
+package AWT.calculator;
 
 import javax.swing.*;
 
@@ -16,9 +16,9 @@ public class buttons {
     static JButton button9 = new JButton();
 
 
-    public void setHeightAndWeight(){
-        widthButton = 50;
-        heightButton = 50;
+    public static void setHeightAndWeight(){
+        widthButton = 30;
+        heightButton = 30;
         button1.setSize(widthButton, heightButton);
         button2.setSize(widthButton, heightButton);
         button3.setSize(widthButton, heightButton);
@@ -29,8 +29,8 @@ public class buttons {
         button8.setSize(widthButton, heightButton);
         button9.setSize(widthButton, heightButton);
     }
-    public void setLocationButtons(){
-        button1.setLocation(10, 10);
+    public static void setLocationButtons(){
+        button1.setLocation(10, 360);
         button2.setLocation(widthButton, heightButton);
         button3.setLocation(widthButton, heightButton);
         button4.setLocation(widthButton, heightButton);

@@ -1,10 +1,9 @@
-package calculator;
+package AWT.calculator;
 
 import javax.swing.*;
 
-import java.awt.*;
-
-import static calculator.buttons.*;
+import static AWT.calculator.Painel.*;
+import static AWT.calculator.buttons.*;
 
 public class Tela {
     static JFrame calculator = new JFrame();
@@ -16,7 +15,10 @@ public class Tela {
         setTitleJFrame();
         setLocationJFrame();
         setLayoutJFrame();
-        addButtonsInFrame();
+        setConfigVisor();
+        addPainelInFrame();
+        //setConfigButtons();
+        //addButtonsInFrame();
         calculator.setVisible(true);
     }
 
@@ -24,6 +26,7 @@ public class Tela {
         widthFrame = 400;
         heightFrame = 400;
         calculator.setSize(widthFrame, heightFrame);
+        calculator.setResizable(false);
     }
     public static void setTitleJFrame(){
         title = "Calculator";
@@ -33,7 +36,11 @@ public class Tela {
         calculator.setLocationRelativeTo(null);
     }
     public static void setLayoutJFrame(){
-        calculator.setLayout(new FlowLayout());
+        calculator.setLayout(null);
+    }
+    public static void setConfigButtons(){
+        setHeightAndWeight();
+        setLocationButtons();
     }
     public static void addButtonsInFrame(){
         calculator.add(button1);
@@ -45,5 +52,11 @@ public class Tela {
         calculator.add(button7);
         calculator.add(button8);
         calculator.add(button9);
+    }
+    public static void setConfigVisor(){
+        setSizeVisor();
+    }
+    public static void addPainelInFrame(){
+        calculator.add(Visor);
     }
 }
