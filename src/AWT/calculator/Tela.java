@@ -2,7 +2,11 @@ package AWT.calculator;
 
 import javax.swing.*;
 
+import java.awt.event.ActionEvent;
+
+import static AWT.calculator.MiniPainel.*;
 import static AWT.calculator.Painel.*;
+import static AWT.calculator.SpecialButtons.*;
 import static AWT.calculator.buttons.*;
 
 public class Tela {
@@ -15,16 +19,16 @@ public class Tela {
         setTitleJFrame();
         setLocationJFrame();
         setLayoutJFrame();
-        setConfigVisor();
-        addPainelInFrame();
-        //setConfigButtons();
-        //addButtonsInFrame();
+        PainelInFrame();
+        ButtonsInFrame();
+        SpecialButtonInFrame();
+        MiniPainelInFrame();
         calculator.setVisible(true);
     }
 
     public static void setSizeJFrame(){
-        widthFrame = 400;
-        heightFrame = 400;
+        widthFrame = 370;
+        heightFrame = 450;
         calculator.setSize(widthFrame, heightFrame);
         calculator.setResizable(false);
     }
@@ -38,25 +42,51 @@ public class Tela {
     public static void setLayoutJFrame(){
         calculator.setLayout(null);
     }
-    public static void setConfigButtons(){
-        setHeightAndWeight();
-        setLocationButtons();
-    }
-    public static void addButtonsInFrame(){
+    public static void ButtonsInFrame(){
+        calculator.add(button0);
+
         calculator.add(button1);
         calculator.add(button2);
         calculator.add(button3);
+
         calculator.add(button4);
         calculator.add(button5);
         calculator.add(button6);
+
         calculator.add(button7);
         calculator.add(button8);
         calculator.add(button9);
+
+        setHeightAndWeight();
+        setLocationButtons();
+        setTextButtons();
+        setEventListenerButtons();
     }
-    public static void setConfigVisor(){
-        setSizeVisor();
-    }
-    public static void addPainelInFrame(){
+    public static void PainelInFrame(){
         calculator.add(Visor);
+        setSizeVisor();
+        setLocationVisor();
+        Visor.setEditable(false);
+    }
+    public static void MiniPainelInFrame(){
+        calculator.add(MiniVisor);
+        setSizeMiniVisor();
+        setLocationMiniVisor();
+        MiniVisor.setEditable(false);
+    }
+
+    public static void SpecialButtonInFrame(){
+        calculator.add(comma);
+        calculator.add(equals);
+        calculator.add(erase);
+        calculator.add(history);
+        calculator.add(sum);
+        calculator.add(subtraction);
+        calculator.add(multiplication);
+        calculator.add(division);
+        setHeightAndWeightSpecialButtons();
+        setLocationSpecialButtons();
+        setTextSpecialButtons();
+        setEventListenerSpecialButtons();
     }
 }
