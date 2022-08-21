@@ -33,7 +33,7 @@ public class Tela {
         calculator.setResizable(false);
     }
     public static void setTitleJFrame(){
-        title = "Calculator";
+        title = "Calculadora";
         calculator.setTitle(title);
     }
     public static void setLocationJFrame(){
@@ -76,10 +76,10 @@ public class Tela {
     }
 
     public static void SpecialButtonInFrame(){
-        calculator.add(comma);
+        calculator.add(dot);
         calculator.add(equals);
         calculator.add(erase);
-        calculator.add(history);
+        calculator.add(backspace);
         calculator.add(sum);
         calculator.add(subtraction);
         calculator.add(multiplication);
