@@ -127,25 +127,29 @@ public class SpecialButtons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textValue2 = Visor.getText();
-                value1 = Double.parseDouble(textValue1);
-                value2 = Double.parseDouble(textValue2);
-                switch (operation){
-                    case 1 ->{
-                        finalValue = value1 + value2;
+                try {
+                    value1 = Double.parseDouble(textValue1);
+                    value2 = Double.parseDouble(textValue2);
+                    switch (operation) {
+                        case 1 -> {
+                            finalValue = value1 + value2;
+                        }
+                        case 2 -> {
+                            finalValue = value1 - value2;
+                        }
+                        case 3 -> {
+                            finalValue = value1 * value2;
+                        }
+                        case 4 -> {
+                            finalValue = value1 / value2;
+                        }
                     }
-                    case 2 ->{
-                        finalValue = value1 - value2;
-                    }
-                    case 3 ->{
-                        finalValue = value1 * value2;
-                    }
-                    case 4 ->{
-                        finalValue = value1 / value2;
-                    }
+                    textFinalValue = String.valueOf(finalValue);
+                    MiniVisor.setText(MiniVisor.getText() + textValue2);
+                    Visor.setText(textFinalValue);
+                }catch (Exception error){
+                    JOptionPane.showMessageDialog(null, error);
                 }
-                textFinalValue = String.valueOf(finalValue);
-                MiniVisor.setText(MiniVisor.getText() + textValue2);
-                Visor.setText(textFinalValue);
             }
         });
     }
