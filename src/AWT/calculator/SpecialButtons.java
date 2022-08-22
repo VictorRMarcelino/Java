@@ -10,23 +10,23 @@ import static AWT.calculator.Painel.Visor;
 
 public class SpecialButtons {
 
-    static JButton sum = new JButton();
-    static JButton subtraction = new JButton();
-    static JButton multiplication = new JButton();
-    static JButton division = new JButton();
-    static JButton dot = new JButton();
-    static JButton equals = new JButton();
-    static JButton erase = new JButton();
-    static JButton backspace = new JButton();
+    static protected JButton sum = new JButton();
+    static protected JButton subtraction = new JButton();
+    static protected JButton multiplication = new JButton();
+    static protected JButton division = new JButton();
+    static protected JButton dot = new JButton();
+    static protected JButton equals = new JButton();
+    static protected JButton erase = new JButton();
+    static protected JButton backspace = new JButton();
 
-    public static String textValue1, textValue2, textFinalValue;
-    public static double value1, value2, finalValue;
-    public static int operation;
+    protected static String textValue1, textValue2, textFinalValue;
+    protected static double value1, value2, finalValue;
+    protected static int operation;
 
-    public static int widthButton, heightButton;
+    protected static int widthButton, heightButton;
 
 
-    public static void setHeightAndWeightSpecialButtons(){
+    protected static void setHeightAndWeightSpecialButtons(){
         widthButton = 60;
         heightButton = 60;
         sum.setSize(widthButton, heightButton);
@@ -38,7 +38,7 @@ public class SpecialButtons {
         erase.setSize(150, 30);
         backspace.setSize(150, 30);
     }
-    public static void setLocationSpecialButtons(){
+    protected static void setLocationSpecialButtons(){
         dot.setLocation(100, 305);
         equals.setLocation(190, 305);
         sum.setLocation(280, 305);
@@ -49,7 +49,7 @@ public class SpecialButtons {
         erase.setLocation(190, 375);
     }
 
-    public static void setTextSpecialButtons(){
+    protected static void setTextSpecialButtons(){
         sum.setText("+");
         subtraction.setText("-");
         multiplication.setText("*");
@@ -60,7 +60,7 @@ public class SpecialButtons {
         backspace.setText("Apagar");
     }
 
-    public static void setEventListenerSpecialButtons(){
+    protected static void setEventListenerSpecialButtons(){
         dot.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

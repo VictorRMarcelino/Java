@@ -21,7 +21,7 @@ public class buttons {
     static JButton button9 = new JButton();
 
 
-    public static void setHeightAndWeight(){
+    protected static void setHeightAndWeight(){
         widthButton = 60;
         heightButton = 60;
         button0.setSize(widthButton, heightButton);
@@ -35,7 +35,7 @@ public class buttons {
         button8.setSize(widthButton, heightButton);
         button9.setSize(widthButton, heightButton);
     }
-    public static void setLocationButtons(){
+    protected static void setLocationButtons(){
         button0.setLocation(10, 305);
 
         button1.setLocation(10, 225);
@@ -51,7 +51,7 @@ public class buttons {
         button9.setLocation(190, 65);
     }
 
-    public static void setTextButtons(){
+    protected static void setTextButtons(){
         button0.setText("0");
         button1.setText("1");
         button2.setText("2");
@@ -64,7 +64,7 @@ public class buttons {
         button9.setText("9");
     }
 
-    public static void setEventListenerButtons(){
+    protected static void setEventListenerButtons(){
         button0.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

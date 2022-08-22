@@ -11,8 +11,6 @@ import static AWT.calculator.buttons.*;
 
 public class Tela {
     static JFrame calculator = new JFrame();
-    static int widthFrame, heightFrame;
-    static String title = "Calculator";
 
     public static void main(String[] args) {
         setSizeJFrame();
@@ -26,23 +24,25 @@ public class Tela {
         calculator.setVisible(true);
     }
 
-    public static void setSizeJFrame(){
+    protected static void setSizeJFrame(){
+        int widthFrame, heightFrame;
         widthFrame = 370;
         heightFrame = 450;
         calculator.setSize(widthFrame, heightFrame);
         calculator.setResizable(false);
     }
-    public static void setTitleJFrame(){
+    protected static void setTitleJFrame(){
+        String title;
         title = "Calculadora";
         calculator.setTitle(title);
     }
-    public static void setLocationJFrame(){
+    protected static void setLocationJFrame(){
         calculator.setLocationRelativeTo(null);
     }
-    public static void setLayoutJFrame(){
+    protected static void setLayoutJFrame(){
         calculator.setLayout(null);
     }
-    public static void ButtonsInFrame(){
+    protected static void ButtonsInFrame(){
         calculator.add(button0);
 
         calculator.add(button1);
@@ -62,20 +62,20 @@ public class Tela {
         setTextButtons();
         setEventListenerButtons();
     }
-    public static void PainelInFrame(){
+    protected static void PainelInFrame(){
         calculator.add(Visor);
         setSizeVisor();
         setLocationVisor();
         Visor.setEditable(false);
     }
-    public static void MiniPainelInFrame(){
+    protected static void MiniPainelInFrame(){
         calculator.add(MiniVisor);
         setSizeMiniVisor();
         setLocationMiniVisor();
         MiniVisor.setEditable(false);
     }
 
-    public static void SpecialButtonInFrame(){
+    protected static void SpecialButtonInFrame(){
         calculator.add(dot);
         calculator.add(equals);
         calculator.add(erase);
